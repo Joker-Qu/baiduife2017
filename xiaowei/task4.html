@@ -3,8 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .content{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            height: 1000px;
+            margin: 0 auto;
+            border: 1px solid rgba(7,17,27,0.1);
+        }
+        .center{
+            position: relative;
+            width: 400px;
+            height: 200px;
+            overflow: hidden;
+            background: #ccc;
+        }
+        .left-top,.right-bottom{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            z-index: 10;
+            border-radius: 50%;
+            background: #fc0;
+        }
+        .left-top{
+            left: -50px;
+            top:-50px;
+        }
+        .right-bottom{
+            right: -50px;
+            bottom:-50px;
+        }
+    </style>
 </head>
 <body>
-
+<div class="content">
+    <div class="center">
+        <div class="left-top"></div>
+        <div class="right-bottom"></div>
+    </div>
+</div>
 </body>
 </html>

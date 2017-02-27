@@ -2,9 +2,330 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>零基础HTML编码</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .nav-header {
+            height: 60px;
+            background: rgb(45, 45, 45);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .nav-header span {
+            font-size: 30px;
+            line-height: 60px;
+            color: red;
+            margin-left: 10px;
+        }
+
+        .nav-header ul li {
+            display: inline-block;
+            height: 60px;
+            line-height: 60px;
+            font-size: 12px;
+        }
+
+        .nav-header li a {
+            color: white;
+        }
+
+        .content {
+            padding: 20px;
+            background: rgb(221, 221, 221);
+        }
+
+        .content article {
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(7, 17, 27, 0.1);
+            background: white;
+        }
+
+        .content article h1 {
+            line-height: 54px;
+            font-size: 22px;
+        }
+
+        .content article h2 {
+            line-height: 24px;
+            font-size: 16px;
+            color: rgb(104, 104, 104);
+        }
+
+        .content address, .content time {
+            display: inline-block;
+            color: rgb(104, 104, 104);
+            font-size: 10px;
+        }
+
+        .content article p {
+            line-height: 28px;
+            margin: 10px 0px;
+            text-indent: 24px;
+        }
+
+        .content article a {
+            color: blue;
+        }
+
+        .content .art-2 ul {
+            margin-top: 10px;
+        }
+
+        .content .art-2 li {
+            line-height: 24px;
+        }
+
+        .content .art-3 li {
+            width: 120px;
+            height: 126px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(7, 17, 27, 0.1);
+            text-align: center;
+        }
+
+        .content .art-3 li h4 {
+            line-height: 36px;
+            font-size: 16px;
+        }
+
+        .content .art-4 ol {
+            margin-top: 10px;
+        }
+
+        .content .art-4 li {
+            line-height: 24px;
+        }
+
+        .content .art-4 table {
+            width: 100%;
+        }
+
+        .content .art-4 .headline {
+            color: white;
+            background: rgb(40, 40, 40);
+
+        }
+
+        .content .art-4 .headline th {
+            padding-left: 4px;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .content .art-4 .lastline {
+            background: rgba(7, 17, 27, 0.2);
+            color: black;
+        }
+
+        .content .art-4 tr {
+
+            font-size: 12px;
+            line-height: 24px;
+        }
+
+        .content .art-4 td {
+            padding-left: 4px;
+            border: 1px solid rgba(7, 17, 27, 0.1);
+        }
+
+        .content aside {
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(7, 17, 27, 0.1);
+            background: white;
+        }
+
+        .content aside h1 {
+            line-height: 54px;
+            font-size: 22px;
+            border-left: 4px solid rgba(7, 17, 27, 0.2);
+            padding-left: 6px;
+        }
+
+        .content .formcontent {
+            padding-left: 20%;
+            font-size: 12px;
+            line-height: 24px;
+        }
+
+        .content .formcontent input {
+            border: 1px solid rgba(7, 17, 27, 0.1);
+        }
+
+        .content .formcontent label {
+            margin-right: 10px;
+        }
+        .content .formcontent .group{
+            width: 260px;
+            margin-bottom: 20px;
+        }
+        .content .formcontent .group p{
+           text-align: right;
+        }
+        .content .formcontent textarea{
+            width: 760px;
+            height: 100px;
+        }
+        .content .formcontent .submit{
+            display: block;
+            width: 100%;
+            line-height: 38px;
+            font-size: 24px;
+            background:rgb(53,90,205);
+            color: white;
+        }
+        footer{
+            height: 60px;
+            display: flex;
+            background: #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color:white;
+        }
+
+    </style>
 </head>
 <body>
-
+<div class="nav-header">
+    <span>百度</span>
+    <ul>
+        <li><a href="#">导航链接1</a></li>
+        <li><a href="#">导航链接2</a></li>
+        <li><a href="#">导航链接3</a></li>
+        <li><a href="#">导航链接4</a></li>
+    </ul>
+</div>
+<div class="content">
+    <article>
+        <h1>文章一级标题</h1>
+        <h2>文章二级标题</h2>
+        <address>文章作者</address>
+        <time>文章发表时间</time>
+        <p>这是一个很长很长的段落,这是一个很长很长的段落,这是一个很长很长的段落,这是一个很长很长的段落,这是一个很长很长的段落
+            这是一个很长很长的段落这是一个很长很长的段落这是一个很长很长的段落这是一个很长很长的段落这是换行了<br>
+            这是一个很长很长的段落这是一个很长很长的段落这是一个很长很长的段落这是一个很长很长的段落这是换行了<br>
+            这是一个很长很长的段落这是一个很长很长的段落这是一个很长很长的段落<a href="http://ife.baidu.com">这里有一个链接到百度前端学院</a>这里有一个<b>粗体字</b><br>
+            这是一个很长很长的段落这是一个很长很长的段落这是一个很长很长的段落
+        </p>
+        <img src="img/default.jpg">
+    </article>
+    <article class="art-2">
+        <h1>另一篇文章一级标题</h1>
+        <h2>文章二级标题</h2>
+        <address>文章作者</address>
+        <time>文章发表时间</time>
+        <p>这是一个很长很长的段落,这是一个很长很长的段落,这是一个很长很长的段落,这是一个很长很长的段落,这是一个很长很长的段落
+            这是一个很长很长的段落这是一个很长很长的段落这是一个很长很长的段落这是一个很长很长的段落这是换行了<br>
+            这是一个很长很长的段落这是一个很长很长的段落这是一个很长很长的段落这是一个很长很长的段落这是换行了<br>
+            这是一个很长很长的段落这是一个很长很长的段落这是一个很长很长的段落<a href="http://ife.baidu.com">这里有一个链接到百度前端学院</a>这里有一个<b>粗体字</b><br>
+            这是一个很长很长的段落这是一个很长很长的段落这是一个很长很长的段落
+        </p>
+        <img src="img/default.jpg">
+        <ul>
+            <li>列表项目1</li>
+            <li>列表项目2</li>
+            <li>列表项目3</li>
+        </ul>
+    </article>
+    <article class="art-3">
+        <h1>图片</h1>
+        <ul>
+            <li>
+                <h4>好看的图片</h4>
+                <img src="img/default.jpg" width="100px" height="80px">
+            </li>
+            <li>
+                <h4>好看的图片</h4>
+                <img src="img/default.jpg" width="100px" height="80px">
+            </li>
+            <li>
+                <h4>好看的图片</h4>
+                <img src="img/default.jpg" width="100px" height="80px">
+            </li>
+            <li>
+                <h4>好看的图片</h4>
+                <img src="img/default.jpg" width="100px" height="80px">
+            </li>
+            <li>
+                <h4>好看的图片</h4>
+                <img src="img/default.jpg" width="100px" height="80px">
+            </li>
+        </ul>
+    </article>
+    <article class="art-4">
+        <h1>最后一篇文章一级标题</h1>
+        <h2>文章二级标题</h2>
+        <address>文章作者</address>
+        <time>文章发表时间</time>
+        <ol>
+            <li>排名1</li>
+            <li>排名2</li>
+            <li>排名3</li>
+        </ol>
+        <caption>下面是一个表格</caption>
+        <table border="1">
+            <tr class="headline">
+                <th>表头</th>
+                <th>表头</th>
+                <th>表头</th>
+            </tr>
+            <tr>
+                <td>表内容单元格</td>
+                <td>表内容单元格</td>
+                <td><a href="javascript:;">操作</a></td>
+            </tr>
+            <tr>
+                <td>表内容单元格</td>
+                <td>表内容单元格</td>
+                <td><a href="javascript:;">操作</a></td>
+            </tr>
+            <tr>
+                <td>表内容单元格</td>
+                <td>表内容单元格</td>
+                <td><a href="javascript:;">操作</a></td>
+            </tr>
+            <tr>
+                <td>表内容单元格</td>
+                <td>表内容单元格</td>
+                <td><a href="javascript:;">操作</a></td>
+            </tr>
+            <tr class="lastline">
+                <td>总计</td>
+                <td colspan="2">1000</td>
+            </tr>
+        </table>
+    </article>
+    <aside>
+        <h1>侧栏标题</h1>
+        <div class="formcontent">
+            <form>
+                <div class="group">
+                    <label for="email">请输入邮箱地址</label><input type="email" placeholder="请输入邮箱" id="email">
+                    <p>邮箱地址请按格式输入</p>
+                </div>
+                <div class="group">
+                    <label for="pwd">请输入密码</label><input type="password" placeholder="请输入密码" id="pwd"><br>
+                    <label for="repeatPwd">请重复输入密码</label><input type="password" placeholder="请重复输入密码" id="repeatPwd">
+                    <p>密码请为6-16位英文或数字</p>
+                </div>
+                <label>性别: </label><input type="radio" value="male" checked>男<input type="radio" value="female">女<br>
+                <label>城市: </label>
+                <select>
+                    <option>北京</option>
+                    <option>上海</option>
+                    <option>深圳</option>
+                </select>
+                <br>
+                <label>爱好: </label><input type="checkbox">运动<input type="checkbox">艺术<input type="checkbox">科学<br>
+                <label for="des">个人描述: </label><textarea id="des" placeholder="多行输入"></textarea>
+            </form>
+            <input type="submit" class="submit">
+        </div>
+    </aside>
+</div>
+<footer><strong>版权所有</strong></footer>
 </body>
 </html>
