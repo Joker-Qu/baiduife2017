@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .header {
+            height: 57px;
+            padding: 0 60px;
+        }
+
+        .header .logo {
+            float: left;
+            background: url("img/task7/logo.png") no-repeat center;
+            background-size: 14px 17px;
+            width: 14px;
+            height: 57px;
+            margin-right: 5px;
+        }
+
+        .header .title {
+            float: left;
+            line-height: 57px;
+            font-size: 17px;
+
+        }
+
+        .header ul {
+            float: right;
+        }
+
+        .header li {
+            display: inline-block;
+            font-size: 16px;
+            line-height: 57px;
+            padding: 0 5px;
+        }
+
+        /*图标定位background-position*/
+        .header .login {
+            padding-left: 16px;
+            background: url("img/task7/login.png") no-repeat left center;
+            background-size: 14px 17px;
+            color: #e74f4d;
+        }
+        .active {
+            border-bottom: 1px solid #e74f4d;
+            color: #e74f4d;
+        }
+        .board{
+            position: relative;
+        }
+        .board .mask{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 550px;
+            height: 100%;
+            padding-left: 128px;
+
+            color: white;
+        }
+        .board .mask h1{
+            margin-top: 207px;
+            font-size: 50px;
+            line-height: 100px;
+        }
+        .board .mask p{
+            text-align: center;
+            width: 328px;
+            font-size: 26px;
+            line-height: 30px;
+        }
+        .board .mask a{
+            display: inline-block;
+            width: 328px;
+            height: 65px;
+            margin-top: 60px;
+            font-size: 30px;
+            line-height: 65px;
+            text-align: center;
+            color: white;
+            background: #e74f4d;
+        }
+        .tab{
+            display: flex;
+            height: 251px;
+        }
+        .tab .item{
+            flex: 1;
+            text-align: center;
+        }
+        .tab .item .icon{
+            padding: 56px;
+        }
+        .tab .item .detail{
+            padding: 0 60px;
+            font-size: 12px;
+            color: #8f908f;
+            border-right: 2px solid #e74f4d;
+        }
+        .tab .item .last{
+            border-right:none;
+        }
+        .ad{
+            height: 362px;
+            text-align: center;
+            background: #ededec;
+        }
+        .ad img{
+            margin-top: 88px;
+        }
+        .ad p{
+            font-size: 60px;
+            line-height: 144px;
+            color: #8f908f;
+        }
+        .map{
+            position: relative;
+            width: 100%;
+            height: 340px;
+            background: url("img/task7/map.png") no-repeat 0px 0px;
+            background-size: 100% 100%;
+        }
+        .map-mask{
+            position: absolute;
+            left: 0;
+            top:0;
+            width: 100%;
+            height: 100%;
+            z-index: 40;
+            text-align: center;
+            color: white;
+            background:rgba(238,214,214,0.4) ;
+        }
+        .map-mask h1{
+            margin-top: 40px;
+            line-height: 40px;
+            font-size: 30px;
+        }
+        .map-mask p{
+           line-height: 60px;
+            font-size: 12px;
+        }
+        .map-mask .search{
+            display: flex;
+            padding: 0 128px;
+        }
+        .map-mask .search .select{
+            flex: 1;
+        }
+        .map-mask .search .select input{
+            margin-top: 40px;
+            text-indent: 10px;
+            font-size: 16px;
+            height: 30px;
+            width: 80%;
+        }
+        .map-mask .search .select input.onselect{
+            border: 1px solid #be4f48;
+        }
+        .map-mask .search .select a{
+            display: inline-block;
+            margin-top: 40px;
+            font-size: 16px;
+            height: 30px;
+            line-height: 30px;
+            width: 80%;
+            color: white;
+            background: #be4f48;
+        }
+        .map-mask .search .select ul{
+            width: 80%;
+            margin: 0 auto;
+            border: 1px solid #be4f48;
+            background:#e3e3e4;
+        }
+        .map-mask .search .select li{
+            position: relative;
+            height: 28px;
+            line-height: 28px;
+            font-size: 16px;
+            color: #333333;
+        }
+        .map-mask .search .select li img{
+            position: absolute;
+            left: 6px;
+            top:9px;
+        }
+        .map-mask .search .select li.onselect{
+            background: #be4f48;
+            color: #fff;
+        }
+        .gallery{
+            display: flex;
+            height: 400px;
+            padding: 100px 80px;
+            background: #f7f7f7;
+        }
+        .gallery .g-item{
+            flex: 1;
+            text-align: center;
+        }
+        .gallery .g-item .img-wrapper{
+            width: 220px;
+            margin: 0 auto;
+            border: 1px solid #cccccc;
+            background: white;
+        }
+        .gallery .g-item .img-wrapper img{
+            margin: 10px;
+        }
+        .gallery .g-item h1{
+            line-height: 40px;
+            font-size: 30px;
+        }
+        .gallery .g-item h2{
+            line-height: 40px;
+            font-size: 18px;
+        }
+        .gallery .g-item h3{
+            font-size: 12px;
+            line-height: 16px;
+            color: #9f9f9f;
+        }
+        .newworld{
+            display: flex;
+            height: 568px;
+        }
+        .newworld .img-wrapper{
+            flex: 0 0 851px;
+            text-align: center;
+            background: url("img/task7/newworld.png") no-repeat 0px 0px;
+            background-size: 100% 100%;
+            color: white;
+        }
+        .newworld .img-wrapper h2{
+            margin-top: 128px;
+            line-height: 60px;
+            font-size: 50px;
+        }
+        .newworld .img-wrapper h1{
+            line-height: 130px;
+            font-size: 130px;
+            margin-bottom: 30px;
+        }
+        .newworld .img-wrapper p{
+            font-size: 20px;
+        }
+        .newworld .img-wrapper time{
+            line-height: 50px;
+        }
+        .newworld .n-right{
+            flex: 1;
+            position: relative;
+            padding: 0 72px;
+            text-align: center;
+        }
+        .n-right .triangle{
+            position: absolute;
+            left: -20px;
+            top: 270px;
+            width: 0px;
+            height: 0px;
+            border: 10px solid transparent;
+            border-right-color: white;
+        }
+        .newworld .n-right h1{
+            line-height: 80px;
+            font-size: 24px;
+            margin-top: 134px;
+        }
+        .newworld .n-right h1 span{
+            color: #be4f48;
+        }
+        .newworld .n-right p{
+            font-size: 12px;
+            line-height: 34px;
+            color: #5a5a5b;
+        }
+        .newworld .n-right a{
+            display: inline-block;
+            width: 105px;
+            height: 36px;
+            line-height: 36px;
+            font-size: 16px;
+            margin-top: 40px;
+            border: 1px solid #be4f48;
+            color: #be4f48;
+        }
+        .n-right .indicator{
+            width: 84px;
+            height: 28px;
+            font-size: 0px;
+            margin: 20px auto;
+        }
+        .n-right .indicator .dot{
+            display: inline-block;
+            width: 33.3%;
+            height: 28px;
+            background: url("img/task7/dot_blank.png") no-repeat center;
+        }
+        .n-right .indicator .dot.onselect{
+            background: url("img/task7/dot.png") no-repeat center;
+        }
+        .more{
+            display: flex;
+            height: 522px;
+        }
+        .more .m-item{
+            flex: 1;
+            text-align: center;
+        }
+        .more .m-item a{
+            display: inline-block;
+            width: 174px;
+            height: 43px;
+            line-height: 43px;
+            font-size: 18px;
+        }
+        .more .m-item.left{
+            color: white;
+            background: #be4f48;
+        }
+        .more .m-item.left a{
+            color: white;
+            border: 1px solid white;
+        }
+        .more .m-item.center{
+            position: relative;
+        }
+        .more .m-item.center a{
+            color: #be4f48;
+            border: 1px solid #be4f48;
+        }
+        .more .m-item.center .triangle{
+            position: absolute;
+            right: -20px;
+            top: 246px;
+            width: 0px;
+            height: 0px;
+            border: 10px solid transparent;
+            border-left-color: white;
+        }
+        .more .m-item .divide{
+            width: 16px;
+            height: 2px;
+            margin: 20px auto;
+            background: white;
+        }
+        .more .m-item.center .divide{
+            background: #be4f48;
+        }
+        .more .m-item h1:first-child{
+            margin-top: 170px;
+            font-size: 20px;
+            line-height: 30px;
+        }
+        .more .right{
+            background: url("img/task7/station.png") no-repeat 0px 0px;
+            background-size: 100% 100%;
+        }
+        .volunteer{
+            padding: 86px 60px;
+            text-align: center;
+        }
+        .volunteer h1{
+            line-height: 80px;
+            font-size: 20px;
+        }
+        .volunteer p{
+            line-height: 20px;
+            font-size: 12px;
+            color: #5a5a5b;
+        }
+        .volunteer .detail{
+            display: flex;
+        }
+        .volunteer .detail .protocol{
+            flex: 0 0 20%;
+        }
+        .volunteer .detail .protocol li{
+            text-align: left;
+            padding: 0 12px;
+            margin-bottom: 10px;
+        }
+        .volunteer .detail .protocol li h2{
+            line-height: 30px;
+            font-size: 20px;
+        }
+        .volunteer .detail .protocol li p{
+            line-height: 24px;
+            font-size: 12px;
+             overflow:hidden;
+            text-overflow:ellipsis;
+            color: #5a5a5b;
+        }
+        .volunteer .detail .protocol .p-more{
+            height: 18px;
+            line-height: 18px;
+            font-size: 12px;
+            position: relative;
+            text-align: right;
+            color: #5a5a5b;
+        }
+        .volunteer .detail .protocol .p-more .down{
+            display: inline-block;
+            width: 12px;
+            height: 18px;
+            background: url("img/task7/down.png") no-repeat center;
+            vertical-align: top;
+            margin-right: 5px;
+        }
+        .volunteer .detail .form-wrapper{
+            flex: 1;
+            margin-left: 120px;
+        }
+        .volunteer .detail .input-wrapper{
+            display: flex;
+            justify-content: space-between;
+        }
+        .volunteer .detail .input-wrapper input{
+            width: 48%;
+            height: 40px;
+            line-height: 40px;
+            font-size: 16px;
+            text-indent: 32px;
+            margin: 5px 0px 5px 0px;
+        }
+        .volunteer .detail textarea{
+            width:100%;
+            height: 120px;
+            font-size: 12px;
+            line-height: 30px;
+            text-indent: 24px;
+            background: #ededee;
+            border: none;
+            margin: 5px 0px;
+        }
+        .volunteer .detail input{
+            background: #ededee;
+            color: #5a5a5b;
+        }
+        .volunteer .detail input[type=submit]{
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            font-size: 16px;
+            margin: 5px;
+        }
+        .contact{
+            height: 266px;
+            padding-top: 100px;
+            text-align: center;
+            color: white;
+            background: #32363e;
+        }
+        .contact h1{
+            line-height: 30px;
+            font-size: 20px;
+
+        }
+        .contact p{
+            font-size: 12px;
+            line-height: 14px;
+        }
+        .contact .input-wrapper{
+            display: flex;
+            margin: 30px auto;
+            width: 510px;
+            height: 42px;
+        }
+        .contact .input-wrapper input[type=email]{
+            flex: 1;
+            text-indent: 32px;
+            font-size: 16px;
+            color: #5a5a5b;
+        }
+        .contact .input-wrapper input[type=submit]{
+            width: 80px;
+            color: white;
+            background: #5a5a5b;
+        }
+        .contact .items{
+            text-align: center;
+        }
+        .contact .item{
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            margin-right: 20px;
+        }
+        .contact .item1{
+            background: url("img/task7/weibo.png") no-repeat center;
+        }
+        .contact .item2{
+            background: url("img/task7/qq.png") no-repeat center;
+        }
+        .contact .item3{
+            background: url("img/task7/twitter.png") no-repeat center;
+        }
+        .contact .item4{
+            background: url("img/task7/world.png") no-repeat center;
+        }
+        .footer{
+            display: flex;
+            justify-content: space-between;
+            height: 60px;
+            color: white;
+            padding: 0 100px;
+            background: #2f3039;
+        }
+        .footer span{
+            font-size: 12px;
+            line-height: 60px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="header">
+        <span class="logo"></span>
+        <span class="title">新世界</span>
+        <ul>
+            <li class="active">首页</li>
+            <li>最新活动</li>
+            <li>项目介绍</li>
+            <li>爱心社区</li>
+            <li>关于我们</li>
+            <li class="login active">登录</li>
+        </ul>
+    </div>
+    <div class="board">
+        <img src="img/task7/board.png" width="100%" height="690px">
+        <div class="mask">
+            <h1>Time of new life</h1>
+            <p>新时代,年轻的人们让我们一起体验新生活,相守新生活</p>
+            <a href="#">开始体验</a>
+        </div>
+    </div>
+    <div class="tab">
+        <div class="item">
+            <div class="icon">
+                <img src="img/task7/item0.png" width="41" height="40" >
+            </div>
+            <div class="detail">打造全新世界观,让你更爱你的生活.</div>
+        </div>
+        <div class="item">
+            <div class="icon">
+                <img src="img/task7/item1.png" width="41" height="40">
+            </div>
+            <div class="detail">打造全新世界观,让你更爱你的生活.</div>
+        </div>
+        <div class="item">
+            <div class="icon">
+                <img src="img/task7/item2.png" width="41" height="40">
+            </div>
+            <div class="detail">打造全新世界观,让你更爱你的生活.</div>
+        </div>
+        <div class="item">
+            <div class="icon">
+                <img src="img/task7/item3.png" width="41" height="40" >
+            </div>
+            <div class="detail last">打造全新世界观,让你更爱你的生活.</div>
+        </div>
+    </div>
+    <div class="ad">
+        <img src="img/task7/biglogo.png" width="92" height="92">
+        <p>关于新世界,你不知道的还有什么</p>
+    </div>
+    <div class="map">
+        <div class="map-mask">
+            <h1>查找新世界活动信息</h1>
+            <p>每个城市不同的活动信息,请自主查询您需要的信息</p>
+            <div class="search">
+                <div class="select"><input type="text" placeholder="中国"></div>
+                <div class="select">
+                    <input type="text" placeholder="省份" class="onselect">
+                    <ul>
+                        <li class="onselect"><img src="img/task7/check.png">北京</li>
+                        <li>河北</li>
+                        <li>山西</li>
+                        <li>安徽</li>
+                        <li>湖南</li>
+                        <li>湖北</li>
+                    </ul>
+                </div>
+                <div class="select"><input type="text" placeholder="城市"></div>
+                <div class="select"><a href="#">搜索</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="gallery">
+        <div class="g-item">
+            <div class="img-wrapper">
+                <img src="img/task7/gallery.png" width="200" height="311">
+            </div>
+            <h2>北京活动</h2>
+            <h3>新社区大联盟</h3>
+        </div>
+        <div class="g-item">
+            <h1>上海活动活动</h1>
+            <h3>夜上海景观探索</h3>
+            <div class="img-wrapper">
+                <img src="img/task7/gallery.png" width="200" height="311">
+            </div>
+        </div>
+        <div class="g-item">
+            <div class="img-wrapper">
+                <img src="img/task7/gallery.png" width="200" height="311">
+            </div>
+            <h2>北京活动</h2>
+            <h3>新社区大联盟</h3>
+        </div>
+        <div class="g-item">
+            <div class="img-wrapper">
+            <img src="img/task7/gallery.png" width="200" height="311">
+        </div>
+            <h2>北京活动</h2>
+            <h3>新社区大联盟</h3>
+        </div>
+    </div>
+    <div class="newworld">
+        <div class="img-wrapper">
+            <h2>新世界</h2>
+            <h1>TIME</h1>
+            <p>@新世界,北京</p>
+            <time>2016.04.0,4</time>
+        </div>
+        <div class="n-right">
+            <h1>新世界/<span>01</span></h1>
+            <p>新世界是一个新世界.新世界是一个新世界.新世界是一个新世界.新世界是一个新世界.新世界是一个新世界.新世界是一个新世界</p>
+            <a>更多详情</a>
+            <div class="indicator">
+                <span class="dot onselect"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <div class="triangle"></div>
+        </div>
+    </div>
+    <div class="more">
+        <div class="m-item left">
+            <h1>新时代</h1>
+            <h1>关于热爱生活的我们</h1>
+            <div class="divide"></div>
+            <a href="#">查看我们</a>
+        </div>
+        <div class="m-item center">
+            <h1>新时代</h1>
+            <h1>关于热爱生活的我们</h1>
+            <div class="divide"></div>
+            <a href="#">查看我们</a>
+            <div class="triangle"></div>
+        </div>
+        <div class="m-item right">
+        </div>
+    </div>
+    <div class="volunteer">
+        <h1>成为我们的志愿者</h1>
+        <p>新世界欢迎你的加入</p>
+        <div class="detail">
+            <div class="protocol">
+                <ul>
+                    <li>
+                        <h2>新世界志愿者协议</h2>
+                        <p>加入新世界的志愿者必须是中华人命共和国公民,必须遵守相关法律法规.</p>
+                        <div class="p-more"><span class="down"></span><span>more</span></div>
+                    </li>
+                    <li>
+                        <h2>新世界志愿者权利</h2>
+                        <p>加入新世界的志愿者必须是中华人命共和国公民,必须遵守相关法律法规.</p>
+                        <div class="p-more"><span class="down"></span><span>more</span></div>
+                    </li>
+                    <li>
+                        <h2>更多条款</h2>
+                        <div class="p-more"><span class="down"></span><span>more</span></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="form-wrapper">
+                <div class="input-wrapper">
+                    <input type="text" placeholder="姓名:">
+                    <input type="text" placeholder="年龄:">
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" placeholder="联系方式:">
+                    <input type="text" placeholder="联系地址:">
+                </div>
+                <textarea placeholder="请描述自己"></textarea>
+                <input type="submit" value="提交">
+            </div>
+        </div>
+    </div>
+    <div class="contact">
+        <h1>联系我们</h1>
+        <p>为了更好的获取产品资讯,请留下您的电子邮箱,或者通过以下几种方式也可以联系我们.</p>
+        <div class="input-wrapper">
+            <input type="email" placeholder="请输入您的电子邮箱">
+            <input type="submit" value="提交">
+        </div>
+        <div class="items">
+            <span class="item item1"></span>
+            <span class="item item2"></span>
+            <span class="item item3"></span>
+            <span class="item item4"></span>
+        </div>
+    </div>
+    <div class="footer">
+        <span>@2016版权所有</span>
+        <span>back to top</span>
+    </div>
+</div>
+</body>
+</html>
